@@ -2,14 +2,11 @@ plugins {
 	id 'java'
 	id 'java-library'
 	id 'eclipse'
-	
 }
 
-apply plugin: 'maven-publish'
-
-group = 'com.github.jlportus'
+group = 'es.mde'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
@@ -19,15 +16,6 @@ dependencies {
 	
 }
 
-java {
-	withSourcesJar()
-	withJavadocJar()
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-		from components.java
-        }
-    }
+test {
+	useJUnitPlatform()
 }
